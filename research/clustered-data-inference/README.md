@@ -1,60 +1,58 @@
-# Clustered Data: A Simulation of Confidence-Interval Coverage
+# Confidence intervals with clustered data
 
-A **new methods demonstration created on 8 October 2026**, using generated data to examine what happens when an analysis treats clustered observations as independent. It is not an analysis of thesis data or a reproduction of a published study.
-
-## Question and design
-
-When treatment is assigned at cluster level, how do individual-level OLS and an analysis of independent cluster means compare in bias, uncertainty, interval coverage, and rejection rate?
-
-The data-generating model is `y_ij = beta * treatment_j + u_j + e_ij`, with normally distributed cluster intercepts and residual errors. Marginal outcome variance is 1; ICC determines its division between the two variance components. Half the clusters receive treatment. Clusters have equal sizes and independent random intercepts.
-
-| Design factor | Values |
-| --- | --- |
-| Clusters | 20, 50 |
-| Observations per cluster | 10, 30 |
-| ICC | 0.05, 0.30 |
-| Treatment effect | 0, 0.20 marginal SD |
-| Replications per scenario | 2,000 |
-| Random seed | 20261008 |
-
-There are 16 scenarios and two methods. Both methods estimate the same difference in means in this balanced design; they differ in standard errors and degrees of freedom. The cluster-mean method uses a pooled-variance t interval with `clusters - 2` degrees of freedom. The individual OLS interval incorrectly uses `observations - 2` degrees of freedom and assumes independent residuals.
+I examined how treating clustered observations as independent affects confidence intervals and false-positive rates. I generated balanced Gaussian data with treatment assigned to whole clusters. I compared individual-level OLS with an analysis of cluster means across sixteen scenarios, with 2,000 replications each. With twenty clusters of thirty observations and ICC = 0.30 under the null, nominal 95% interval coverage was 46.5% for individual OLS and 95.2% for cluster means.
 
 ## Results
 
-For 20 clusters with 30 observations each and ICC 0.30 under the null, individual OLS has **46.5% coverage** for nominal 95% intervals and a **53.5% false-positive rate**. The cluster-mean method has **95.2% coverage** and a **4.8% false-positive rate**. In this scenario, the Monte Carlo SE for cluster-method coverage is about 0.48 percentage points.
+| Method | 95% interval coverage | False-positive rate |
+| --- | ---: | ---: |
+| Individual-level OLS | 46.5% | 53.5% |
+| Cluster means | 95.2% | 4.8% |
 
-![Confidence-interval coverage by scenario](results/coverage.png)
+This table shows the null scenario with twenty clusters, thirty observations per cluster, and ICC = 0.30. The values come from [summary.csv](results/summary.csv). The Monte Carlo SE for cluster-mean coverage is about 0.48 percentage points.
 
-[The full summary](results/summary.csv) includes bias, RMSE, empirical SD, mean estimated SE, coverage, rejection rate, and Monte Carlo SEs. Rejection is type I error when the effect is zero and power when it is 0.20. Plot error bars show ±1.96 Monte Carlo SE; they describe simulation precision.
+![Interval coverage across null scenarios](results/coverage.png)
 
-## Run
+I varied cluster count (20 or 50), cluster size (10 or 30), ICC (0.05 or 0.30), and treatment effect (0 or 0.20 marginal SD). I assigned half the clusters to treatment and used seed 20261008. [design.csv](results/design.csv) gives all sixteen scenarios. The summary reports bias, RMSE, empirical SD, estimated SE, coverage, rejection rates, and Monte Carlo SEs.
 
-Requires R only:
+Both methods estimate the same difference in means in this balanced design. Their standard errors and degrees of freedom differ. I use a pooled-variance t interval for cluster means, with degrees of freedom equal to the number of clusters minus two. Plot bars show ±1.96 Monte Carlo SE.
+
+<details>
+<summary>Code and files</summary>
+
+I created and ran this simulated-data project on 8 October 2026. It uses generated data, not thesis or participant records. It requires base R only.
 
 ```bash
 Rscript analysis.R
 ```
 
-For a quicker run:
+For a shorter run, I can set the number of replications:
 
 ```bash
 Rscript analysis.R 500
 ```
 
-The script writes the design table, summary, figure, and R session to `results/`. It checks its analytic coefficient and standard-error calculations against `lm()` on the first replication. Every simulated observation is generated locally; no external data downloads or participant data are required.
-
-## Limits
-
-The cluster-mean approach is appropriate for the balanced, cluster-randomized Gaussian design studied here. These results do not establish its performance for unequal cluster sizes, observational exposure, nonnormal outcomes, missing data, or within-cluster treatment assignment. A multilevel model or cluster-robust approach would be a useful extension for those designs.
+The script checks its coefficient and SE calculations against `lm()` on the first replication.
 
 ```text
-Clustered-Data-Inference-Simulation/
-├── analysis.R
-├── results/design.csv
-├── results/summary.csv
-├── results/coverage.png
-├── results/session_info.txt
-├── results/run_metadata.txt
+clustered-data-inference/
 ├── .gitignore
-└── README.md
+├── README.md
+├── analysis.R
+└── results/
+    ├── coverage.png
+    ├── design.csv
+    ├── run_metadata.txt
+    ├── session_info.txt
+    └── summary.csv
 ```
+
+</details>
+
+## Limitations
+
+I studied equal-sized clusters with Gaussian outcomes and independent random intercepts. The results do not cover unequal cluster sizes, observational exposures, missing data, or treatment assigned within clusters. Two thousand replications leave Monte Carlo uncertainty, which I report alongside each estimate.
+
+## Credits
+
+Project author: **Laura Maria Fetz**. This is a new methods project, separate from my earlier thesis and published work.

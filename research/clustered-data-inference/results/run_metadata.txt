@@ -1,3 +1,4 @@
+# Project: Laura Maria Fetz
 Seed: 20261008
 Replications per scenario: 2000
 16 scenarios, 2 methods

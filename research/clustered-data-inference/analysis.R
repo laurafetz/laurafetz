@@ -1,3 +1,4 @@
+# Project: Laura Maria Fetz
 # New simulated-data methods demonstration. No participant data are used.
 # Rscript analysis.R [replications_per_scenario]
 args <- commandArgs(trailingOnly=TRUE)
@@ -71,7 +72,7 @@ for (j in c(20,50)) for (m in c(10,30)) {
   legend("bottomleft",c("Individual OLS","Cluster means"),col=c("#c15b42","#25636a"),lty=1,pch=19,bty="n",cex=.85)
 }
 dev.off()
-capture.output(sessionInfo(),file="results/session_info.txt")
-writeLines(c("Seed: 20261008",paste("Replications per scenario:",reps),"16 scenarios, 2 methods",
+capture.output(cat("# Project: Laura Maria Fetz\n"),sessionInfo(),file="results/session_info.txt")
+writeLines(c("# Project: Laura Maria Fetz","Seed: 20261008",paste("Replications per scenario:",reps),"16 scenarios, 2 methods",
              "All data simulated; no empirical or thesis data used."),"results/run_metadata.txt")
 print(results[results$effect==0,c("clusters","cluster_size","icc","method","coverage","rejection_rate")])
