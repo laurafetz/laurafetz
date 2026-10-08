@@ -1,15 +1,42 @@
-# Laura Maria Fetz
+# Hi, I'm Laura! 👋
 
-Data scientist and researcher working on behavioural measurement and evidence synthesis in psychology and education.
-I use R and Python to examine model assumptions, evaluate predictions, and make quantitative analyses inspectable.
+### Behavioural Data Scientist | Psychology | Educational Science
 
-## Selected work
+I'm an interdisciplinary researcher with Master's degrees in **Behavioural Data Science** and **Child Development & Education** from the University of Amsterdam.
 
-- **[Multilevel meta-analysis of single-case interventions](https://doi.org/10.1016/j.jaacop.2025.12.002)** — Shared first author of a JAACAP Open paper synthesizing 78 studies and 270 cases of interventions for youth externalizing behaviour problems.
-- **[Clustered-data inference simulation](research/clustered-data-inference/)** — New simulated-data demonstration across 16 scenarios: at ICC 0.30, treating 600 observations in 20 clusters as independent reduced nominal 95% interval coverage to 46.5%.
-- **[LLM evaluation on TruthfulQA](https://github.com/laurafetz/LLM-Evaluation-Truthfulness)** — Group project comparing five saved Qwen answer sets, with reference-based evaluation and explicit limits on training and retrieval provenance.
-- **[Stress intervention analysis](https://github.com/laurafetz/Stress-Intervention-ANOVA)** — Baseline-adjusted R analysis of 320 participants; employment moderates the intervention association, adding 1.40 percentage points of explained variance.
+My work combines quantitative research, statistical modelling, and machine learning to better understand human behaviour, psychological processes, and educational outcomes.
 
-Other coursework includes [CFA and measurement invariance](https://github.com/laurafetz/Consideration-of-Future-Consequences-SEM-Factor-Model), [path modelling](https://github.com/laurafetz/Personal-Growth-Identity-Formation-and-Well-Being-SEM-Path-Model), [activity classification](https://github.com/laurafetz/Human-Activity-Recognition), and [vlogger personality prediction](https://github.com/laurafetz/Vlogger-Big-Five-Prediction).
+I particularly enjoy working with complex datasets, exploring methodological challenges, and translating research questions into meaningful analyses.
 
-[ORCID](https://orcid.org/0009-0004-7521-5193) · [LinkedIn](https://www.linkedin.com/in/laura-maria-fetz/) · [Email](mailto:laura.maria.fetz@gmail.com)
+## 🧠 Research Interests
+
+- **Behavioural Data Science:** Applying computational and statistical methods to understand human behaviour.
+- **Psychometrics:** Latent variable modelling, measurement invariance, and individual differences.
+- **Machine Learning:** Predictive modelling, model evaluation, and interpretable approaches.
+- **Psychology & Education:** Studying learning, development, and psychological processes through quantitative research.
+
+## 💻 Technical Skills
+
+**Programming & Data Analysis:** R, Python, SQL
+
+**Statistical Methods:** Structural Equation Modelling (SEM), Multilevel Modelling, Longitudinal Data Analysis, Generalized Linear Mixed Models (GLMMs), Network Analysis, Monte Carlo Simulation
+
+**Psychometrics:** Classical Test Theory (CTT), Item Response Theory (IRT), Confirmatory Factor Analysis (CFA), Measurement Invariance Testing, Latent Variable Modelling
+
+**Machine Learning:** Supervised Learning, Classification, Regression, Natural Language Processing
+
+**Research:** Research Design, Data Management, Statistical Inference, Data Visualization
+
+## 🔬 What I'm Currently Exploring
+
+I'm interested in the intersection of **computational methods and behavioural research**, particularly how statistical and machine learning approaches can help us better understand complex psychological and social phenomena.
+
+I'm continuously expanding my technical skills and exploring new methods and applications across research and industry.
+
+## 🌍 Beyond Data
+
+Outside of research and coding, I love travelling, exploring new cultures, learning languages, and discovering good food. I'm always curious about new places, people, and experiences.
+
+## 📫 Connect With Me
+
+Feel free to explore my repositories or connect with me on LinkedIn.
