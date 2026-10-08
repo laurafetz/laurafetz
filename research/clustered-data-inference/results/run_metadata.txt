@@ -1,0 +1,4 @@
+Seed: 20261008
+Replications per scenario: 2000
+16 scenarios, 2 methods
+All data simulated; no empirical or thesis data used.
