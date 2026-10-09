@@ -39,4 +39,4 @@ Outside of research and coding, I love travelling, exploring new cultures, learn
 
 ## 📫 Connect With Me
 
-Feel free to explore my repositories or connect with me on LinkedIn.
+Feel free to explore my repositories, visit my website: https://laurafetz.github.io, or connect with me on LinkedIn.
